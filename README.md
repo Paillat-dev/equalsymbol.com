@@ -86,18 +86,58 @@ This site takes the concept of "symbol reference pages" and cranks it to 11. It'
 
 ## 🚢 Deployment
 
-This is a static site that can be deployed anywhere:
+### GitHub Pages with Custom Domain (Automatic CI/CD)
+
+This project is configured to automatically deploy to GitHub Pages with the custom domain **equalsymbol.com** when you push to the `master` branch.
+
+**Setup Instructions:**
+
+1. **Configure DNS for your domain:**
+   - Add an `A` record pointing to GitHub Pages IPs:
+     - `185.199.108.153`
+     - `185.199.109.153`
+     - `185.199.110.153`
+     - `185.199.111.153`
+   - Or add a `CNAME` record pointing to `paillat-dev.github.io`
+
+2. **Push your code to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin master
+   ```
+
+3. **Enable GitHub Pages in your repository:**
+   - Go to **Settings** → **Pages**
+   - Under **Source**, select **GitHub Actions**
+   - Under **Custom domain**, enter `equalsymbol.com`
+   - Check **Enforce HTTPS** (recommended)
+
+4. **Automatic deployment:**
+   - The site will automatically build and deploy on every push to `master`
+   - Build workflow: `.github/workflows/deploy.yml`
+   - Live URL: **https://equalsymbol.com**
+
+**CI/CD Workflow includes:**
+- ✅ Automatic builds on push to master
+- ✅ pnpm caching for fast builds
+- ✅ Astro static site generation
+- ✅ Automatic deployment to GitHub Pages
+- ✅ Custom domain configuration (CNAME file in `public/`)
+
+### Manual Build
 
 ```bash
 pnpm build
 # Output in dist/
 ```
 
+### Other Deployment Options
+
 Deploy to:
 - Vercel
 - Netlify
 - Cloudflare Pages
-- GitHub Pages
 - Any static host
 
 ## 📄 License
