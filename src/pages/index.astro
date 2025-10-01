@@ -1,0 +1,661 @@
+---
+import '../styles/global.css';
+
+// Calculate years since the equal symbol was invented (1557)
+const currentYear = new Date().getFullYear();
+const yearsOfService = currentYear - 1557;
+
+const symbolVariations = [
+  { symbol: '=', name: 'Equals Sign', unicode: 'U+003D', html: '&#61;', alt: '61', desc: 'The fundamental symbol of mathematical equality' },
+  { symbol: '≠', name: 'Not Equal To', unicode: 'U+2260', html: '&#8800;', alt: '8800', desc: 'The negation of equality' },
+  { symbol: '≡', name: 'Identical To', unicode: 'U+2261', html: '&#8801;', alt: '8801', desc: 'Denotes congruence or logical equivalence' },
+  { symbol: '≈', name: 'Almost Equal To', unicode: 'U+2248', html: '&#8776;', alt: '8776', desc: 'Approximately equal, for practical purposes' },
+  { symbol: '≅', name: 'Approximately Equal', unicode: 'U+2245', html: '&#8773;', alt: '8773', desc: 'Geometric or isomorphic equivalence' },
+  { symbol: '≆', name: 'Approximately But Not Actually Equal', unicode: 'U+2246', html: '&#8774;', alt: '8774', desc: 'Close, yet distinctly different' },
+  { symbol: '≇', name: 'Neither Approximately Nor Actually Equal', unicode: 'U+2247', html: '&#8775;', alt: '8775', desc: 'Definitively not equivalent' },
+  { symbol: '≔', name: 'Colon Equals', unicode: 'U+2254', html: '&#8788;', alt: '8788', desc: 'Definition or assignment' },
+  { symbol: '≕', name: 'Equals Colon', unicode: 'U+2255', html: '&#8789;', alt: '8789', desc: 'Defined as (reverse)' },
+  { symbol: '≖', name: 'Ring in Equal To', unicode: 'U+2256', html: '&#8790;', alt: '8790', desc: 'Correspondence with circled emphasis' },
+  { symbol: '≗', name: 'Ring Equal To', unicode: 'U+2257', html: '&#8791;', alt: '8791', desc: 'Equality with orbital properties' },
+  { symbol: '≘', name: 'Corresponds To', unicode: 'U+2258', html: '&#8792;', alt: '8792', desc: 'Mathematical correspondence' },
+  { symbol: '≙', name: 'Estimates', unicode: 'U+2259', html: '&#8793;', alt: '8793', desc: 'Statistical estimation relation' },
+  { symbol: '≚', name: 'Equiangular To', unicode: 'U+225A', html: '&#8794;', alt: '8794', desc: 'Geometric angle equivalence' },
+  { symbol: '⩵', name: 'Two Consecutive Equals', unicode: 'U+2A75', html: '&#10869;', alt: '10869', desc: 'Programming equality check' },
+  { symbol: '⩶', name: 'Three Consecutive Equals', unicode: 'U+2A76', html: '&#10870;', alt: '10870', desc: 'Strict type equality (JavaScript)' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Equal Symbol (=) - An exhaustive, possibly excessive exploration of the world's most balanced symbol. Unicode, history, philosophy, and far too many variations.">
+  <meta name="keywords" content="equal symbol, equals sign, =, unicode, mathematics, philosophy, Robert Recorde, equality">
+  <title>The Equal Symbol (=) - A Comprehensive & Slightly Obsessive Reference</title>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-screen">
+
+  <!-- Hero Section -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent"></div>
+    <div class="container mx-auto px-4 py-20 relative">
+      <div class="text-center">
+        <h1 class="text-8xl md:text-9xl font-black mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+          =
+        </h1>
+        <h2 class="text-4xl md:text-6xl font-bold mb-4">The Equal Symbol</h2>
+        <p class="text-xl md:text-2xl text-purple-300 mb-8 italic">
+          The Most Balanced Symbol in the Universe
+        </p>
+        <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
+          Since 1557, two parallel lines have represented one of humanity's most profound mathematical truths.
+          Welcome to the definitive, exhaustive, and arguably unnecessary deep-dive into the equal sign.
+        </p>
+        <button
+          onclick="navigator.clipboard.writeText('='); document.getElementById('copyMsg').classList.remove('opacity-0')"
+          class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-full text-xl transition-all transform hover:scale-105 shadow-2xl cursor-pointer">
+          Copy = to Clipboard
+        </button>
+        <p id="copyMsg" class="opacity-0 transition-opacity mt-4 text-green-400 font-semibold">✓ Copied!</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Stats Section (Over the Top) -->
+  <section class="bg-black/30 backdrop-blur-sm py-12 border-y border-purple-500/30">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-5xl font-black text-cyan-400 mb-2">{yearsOfService}</div>
+          <div class="text-sm text-gray-400 uppercase tracking-wider">Years of Service</div>
+        </div>
+        <div>
+          <div class="text-5xl font-black text-purple-400 mb-2">∞</div>
+          <div class="text-sm text-gray-400 uppercase tracking-wider">Mathematical Equations</div>
+        </div>
+        <div>
+          <div class="text-5xl font-black text-pink-400 mb-2">2</div>
+          <div class="text-sm text-gray-400 uppercase tracking-wider">Perfect Parallel Lines</div>
+        </div>
+        <div>
+          <div class="text-5xl font-black text-green-400 mb-2">100%</div>
+          <div class="text-sm text-gray-400 uppercase tracking-wider">Equality Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-6 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        What is the Equal Symbol?
+      </h2>
+      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/20">
+        <p class="text-lg text-gray-300 leading-relaxed mb-4">
+          The equal symbol (<span class="text-3xl font-bold text-cyan-400">=</span>) is not merely a mathematical notation.
+          It is a <em>philosophical statement</em>, a <em>geometric marvel</em>, and a <em>cultural icon</em> that has shaped
+          human understanding of equivalence, balance, and truth for nearly five centuries.
+        </p>
+        <p class="text-lg text-gray-300 leading-relaxed">
+          Invented by Welsh physician and mathematician <strong class="text-purple-400">Robert Recorde</strong> in 1557,
+          this deceptively simple pair of parallel lines has become the universal language of mathematical equality,
+          transcending borders, languages, and even programming paradigms.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Symbol Variations Grid -->
+  <section class="container mx-auto px-4 py-16">
+    <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+      The Equal Symbol Family
+    </h2>
+    <p class="text-center text-gray-400 mb-8 text-lg">Click any symbol to copy it to your clipboard</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-7xl mx-auto">
+      {symbolVariations.map(item => (
+        <button
+          onclick={`navigator.clipboard.writeText('${item.symbol}'); this.classList.add('animate-flash-success')`}
+          onanimationend="this.classList.remove('animate-flash-success')"
+          class="bg-gradient-to-br from-purple-900/40 to-pink-900/40 hover:from-purple-800/60 hover:to-pink-800/60 backdrop-blur-sm rounded-xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all transform hover:scale-105 cursor-pointer group">
+          <div class="text-6xl mb-3 group-hover:scale-110 transition-transform">{item.symbol}</div>
+          <div class="text-sm font-bold text-purple-300 mb-2">{item.name}</div>
+          <div class="text-xs text-gray-500 mb-2">{item.desc}</div>
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <!-- Unicode Reference Table -->
+  <section class="container mx-auto px-4 py-16">
+    <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+      Complete Unicode & Technical Reference
+    </h2>
+
+    <div class="max-w-6xl mx-auto overflow-x-auto">
+      <table class="w-full bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden">
+        <thead class="bg-purple-900/50">
+          <tr>
+            <th class="px-6 py-4 text-left text-sm font-bold text-purple-300 uppercase tracking-wider">Symbol</th>
+            <th class="px-6 py-4 text-left text-sm font-bold text-purple-300 uppercase tracking-wider">Name</th>
+            <th class="px-6 py-4 text-left text-sm font-bold text-purple-300 uppercase tracking-wider">Unicode</th>
+            <th class="px-6 py-4 text-left text-sm font-bold text-purple-300 uppercase tracking-wider">HTML</th>
+            <th class="px-6 py-4 text-left text-sm font-bold text-purple-300 uppercase tracking-wider">Alt Code</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-purple-500/20">
+          {symbolVariations.map(item => (
+            <tr class="hover:bg-purple-900/30 transition-colors">
+              <td class="px-6 py-4 text-4xl align-middle">{item.symbol}</td>
+              <td class="px-6 py-4 text-sm font-medium align-middle">{item.name}</td>
+              <td class="px-6 py-4 align-middle">
+                <button
+                  onclick={`navigator.clipboard.writeText('${item.unicode}'); this.classList.add('animate-flash-success')`}
+                  onanimationend="this.classList.remove('animate-flash-success')"
+                  class="text-sm text-cyan-400 font-mono bg-cyan-400/10 hover:bg-cyan-400/20 px-2 py-1 rounded border border-cyan-400/30 hover:border-cyan-400/50 transition-all cursor-pointer">
+                  {item.unicode}
+                </button>
+              </td>
+              <td class="px-6 py-4 align-middle">
+                <button
+                  onclick={`navigator.clipboard.writeText('${item.html}'); this.classList.add('animate-flash-success')`}
+                  onanimationend="this.classList.remove('animate-flash-success')"
+                  class="text-sm text-pink-400 font-mono bg-pink-400/10 hover:bg-pink-400/20 px-2 py-1 rounded border border-pink-400/30 hover:border-pink-400/50 transition-all cursor-pointer">
+                  {item.html}
+                </button>
+              </td>
+              <td class="px-6 py-4 align-middle">
+                <button
+                  onclick={`navigator.clipboard.writeText('${item.alt}'); this.classList.add('animate-flash-success')`}
+                  onanimationend="this.classList.remove('animate-flash-success')"
+                  class="text-sm text-gray-400 font-mono bg-gray-400/10 hover:bg-gray-400/20 px-2 py-1 rounded border border-gray-400/30 hover:border-gray-400/50 transition-all cursor-pointer">
+                  Alt + {item.alt}
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Historical Deep Dive -->
+  <section class="bg-black/30 backdrop-blur-sm py-16 border-y border-purple-500/30">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          A Most Illustrious History
+        </h2>
+
+        <div class="space-y-8">
+          <div class="bg-gradient-to-r from-purple-900/40 to-transparent rounded-xl p-8 border-l-4 border-purple-500">
+            <div class="text-3xl font-black text-cyan-400 mb-2">1557</div>
+            <h3 class="text-2xl font-bold mb-4">The Birth of Equality</h3>
+            <p class="text-gray-300 leading-relaxed">
+              In his groundbreaking work <em class="text-purple-300">"The Whetstone of Witte"</em>, Welsh mathematician
+              Robert Recorde introduced the world to two parallel lines of equal length. His reasoning?
+              <strong>"Noe 2 thynges can be moare equalle."</strong> A statement so profound, so geometrically
+              undeniable, that it would echo through the centuries.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-pink-900/40 to-transparent rounded-xl p-8 border-l-4 border-pink-500">
+            <div class="text-3xl font-black text-cyan-400 mb-2">1557-1670</div>
+            <h3 class="text-2xl font-bold mb-4">The Struggle for Acceptance</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Despite its elegance, the equal symbol faced over a century of resistance. Mathematicians preferred
+              writing out "aequales" or using various abbreviations. The symbol's adoption was gradual, contested,
+              and ultimately inevitable—much like the truths it represents.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-cyan-900/40 to-transparent rounded-xl p-8 border-l-4 border-cyan-500">
+            <div class="text-3xl font-black text-cyan-400 mb-2">1670-Present</div>
+            <h3 class="text-2xl font-bold mb-4">Global Domination</h3>
+            <p class="text-gray-300 leading-relaxed">
+              By the late 17th century, the equal symbol achieved universal acceptance. Today, it appears in every
+              mathematical text, programming language, and calculator on Earth. From algebra to astrophysics,
+              from JavaScript to quantum mechanics, the humble "=" reigns supreme.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-8 border border-purple-500/30">
+          <blockquote class="text-xl italic text-gray-300 leading-relaxed">
+            "And to avoide the tediouse repetition of these woordes: is equalle to: I will sette as I doe often in
+            woorke use, a paire of paralleles, or Gemowe lines of one lengthe: =, bicause noe 2 thynges, can be
+            moare equalle."
+          </blockquote>
+          <footer class="mt-4 text-purple-400 font-semibold">
+            — Robert Recorde, <em>The Whetstone of Witte</em>, 1557
+          </footer>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophical Section (Extra) -->
+  <section class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        The Philosophy of Equality
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-br from-cyan-900/30 to-blue-900/30 rounded-xl p-8 border border-cyan-500/30">
+          <h3 class="text-2xl font-bold mb-4 text-cyan-400">Mathematical Truth</h3>
+          <p class="text-gray-300 leading-relaxed">
+            In mathematics, the equal symbol represents absolute, objective truth. When we write 2 + 2 = 4,
+            we're not suggesting or approximating—we're declaring a fundamental reality of the universe.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-8 border border-purple-500/30">
+          <h3 class="text-2xl font-bold mb-4 text-purple-400">Geometric Perfection</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Two lines, perfectly parallel, perfectly equal in length. The symbol embodies the very concept it
+            represents—a self-referential masterpiece of symbolic design.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-pink-900/30 to-red-900/30 rounded-xl p-8 border border-pink-500/30">
+          <h3 class="text-2xl font-bold mb-4 text-pink-400">Cultural Symbolism</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Beyond mathematics, the equal symbol has become a powerful icon for social equality, human rights,
+            and justice movements worldwide. Its meaning transcends numbers.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-xl p-8 border border-green-500/30">
+          <h3 class="text-2xl font-bold mb-4 text-green-400">Computational Logic</h3>
+          <p class="text-gray-300 leading-relaxed">
+            In programming, the equal symbol (and its variants ==, ===) serves as the foundation of boolean logic,
+            conditional statements, and the very architecture of computational thought.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Usage Guide -->
+  <section class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        How to Type the Equal Symbol
+      </h2>
+
+      <div class="space-y-6">
+        <div class="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-xl p-8 border border-purple-500/30">
+          <h3 class="text-2xl font-bold mb-4 flex items-center">
+            <span class="text-3xl mr-3">💻</span>
+            Desktop & Laptop
+          </h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start">
+              <span class="text-cyan-400 font-mono mr-3 mt-1">=</span>
+              <span><strong>Standard keyboard:</strong> Press the = key (usually Shift + Plus on most layouts)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-400 font-mono mr-3 mt-1">≠</span>
+              <span><strong>Windows:</strong> Alt + 8800 (using numeric keypad)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-400 font-mono mr-3 mt-1">≠</span>
+              <span><strong>macOS:</strong> Option + = </span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-cyan-400 font-mono mr-3 mt-1">≈</span>
+              <span><strong>macOS:</strong> Option + X</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-r from-cyan-900/40 to-blue-900/40 rounded-xl p-8 border border-cyan-500/30">
+          <h3 class="text-2xl font-bold mb-4 flex items-center">
+            <span class="text-3xl mr-3">📱</span>
+            Mobile Devices
+          </h3>
+          <ul class="space-y-3 text-gray-300">
+            <li><strong>iOS:</strong> Tap 123 button → Find = on symbol keyboard</li>
+            <li><strong>Android:</strong> Tap ?123 → Find = on symbol keyboard</li>
+            <li><strong>Pro tip:</strong> Just copy from this website!</li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-r from-pink-900/40 to-purple-900/40 rounded-xl p-8 border border-pink-500/30">
+          <h3 class="text-2xl font-bold mb-4 flex items-center">
+            <span class="text-3xl mr-3">👨‍💻</span>
+            Programming Languages
+          </h3>
+          <div class="space-y-4 text-gray-300">
+            <div>
+              <code class="text-cyan-400 bg-black/50 px-2 py-1 rounded">=</code>
+              <span class="ml-3">Assignment operator (most languages)</span>
+            </div>
+            <div>
+              <code class="text-cyan-400 bg-black/50 px-2 py-1 rounded">==</code>
+              <span class="ml-3">Equality comparison (JavaScript, C, Java, etc.)</span>
+            </div>
+            <div>
+              <code class="text-cyan-400 bg-black/50 px-2 py-1 rounded">===</code>
+              <span class="ml-3">Strict equality (JavaScript, PHP)</span>
+            </div>
+            <div>
+              <code class="text-cyan-400 bg-black/50 px-2 py-1 rounded">:=</code>
+              <span class="ml-3">Assignment in Pascal, Go</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications Across Disciplines -->
+  <section class="bg-black/30 backdrop-blur-sm py-16 border-y border-purple-500/30">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          Applications Across Human Knowledge
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 rounded-xl p-6 border border-blue-500/30">
+            <div class="text-4xl mb-3">📐</div>
+            <h3 class="text-xl font-bold mb-3 text-cyan-400">Mathematics</h3>
+            <ul class="text-sm text-gray-300 space-y-2">
+              <li>• Algebraic equations</li>
+              <li>• Geometric proofs</li>
+              <li>• Calculus derivatives</li>
+              <li>• Set theory</li>
+              <li>• Number theory</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-purple-900/40 to-pink-900/40 rounded-xl p-6 border border-purple-500/30">
+            <div class="text-4xl mb-3">🔬</div>
+            <h3 class="text-xl font-bold mb-3 text-purple-400">Physics</h3>
+            <ul class="text-sm text-gray-300 space-y-2">
+              <li>• E = mc² (mass-energy)</li>
+              <li>• F = ma (Newton's law)</li>
+              <li>• Thermodynamics</li>
+              <li>• Quantum mechanics</li>
+              <li>• Relativity equations</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-pink-900/40 to-red-900/40 rounded-xl p-6 border border-pink-500/30">
+            <div class="text-4xl mb-3">⚗️</div>
+            <h3 class="text-xl font-bold mb-3 text-pink-400">Chemistry</h3>
+            <ul class="text-sm text-gray-300 space-y-2">
+              <li>• Chemical equations</li>
+              <li>• Stoichiometry</li>
+              <li>• Equilibrium reactions</li>
+              <li>• pH calculations</li>
+              <li>• Molecular formulas</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-900/40 to-emerald-900/40 rounded-xl p-6 border border-green-500/30">
+            <div class="text-4xl mb-3">💻</div>
+            <h3 class="text-xl font-bold mb-3 text-green-400">Computer Science</h3>
+            <ul class="text-sm text-gray-300 space-y-2">
+              <li>• Variable assignment</li>
+              <li>• Boolean logic</li>
+              <li>• Comparison operators</li>
+              <li>• Algorithm design</li>
+              <li>• Data structures</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-yellow-900/40 to-orange-900/40 rounded-xl p-6 border border-yellow-500/30">
+            <div class="text-4xl mb-3">📊</div>
+            <h3 class="text-xl font-bold mb-3 text-yellow-400">Statistics</h3>
+            <ul class="text-sm text-gray-300 space-y-2">
+              <li>• Probability equations</li>
+              <li>• Hypothesis testing</li>
+              <li>• Regression analysis</li>
+              <li>• Distribution formulas</li>
+              <li>• Statistical inference</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl p-6 border border-indigo-500/30">
+            <div class="text-4xl mb-3">🧮</div>
+            <h3 class="text-xl font-bold mb-3 text-indigo-400">Engineering</h3>
+            <ul class="text-sm text-gray-300 space-y-2">
+              <li>• Structural calculations</li>
+              <li>• Circuit analysis</li>
+              <li>• Fluid dynamics</li>
+              <li>• Control systems</li>
+              <li>• Signal processing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        Frequently Asked Questions
+      </h2>
+
+      <div class="space-y-6">
+        <details class="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-xl p-6 border border-purple-500/30 cursor-pointer group">
+          <summary class="text-xl font-bold text-purple-300 group-hover:text-purple-200">
+            Who invented the equal symbol?
+          </summary>
+          <p class="mt-4 text-gray-300 leading-relaxed">
+            Robert Recorde, a Welsh mathematician and physician, invented the equal symbol in 1557. He introduced it
+            in his book "The Whetstone of Witte" to avoid the "tedious repetition" of writing "is equal to."
+          </p>
+        </details>
+
+        <details class="bg-gradient-to-r from-cyan-900/40 to-blue-900/40 rounded-xl p-6 border border-cyan-500/30 cursor-pointer group">
+          <summary class="text-xl font-bold text-cyan-300 group-hover:text-cyan-200">
+            Why are there two lines in the equal symbol?
+          </summary>
+          <p class="mt-4 text-gray-300 leading-relaxed">
+            Recorde chose two parallel lines because "no two things can be more equal" than parallel lines of the
+            same length. The symbol is a visual representation of the concept of equality itself—a stroke of
+            geometric genius.
+          </p>
+        </details>
+
+        <details class="bg-gradient-to-r from-pink-900/40 to-purple-900/40 rounded-xl p-6 border border-pink-500/30 cursor-pointer group">
+          <summary class="text-xl font-bold text-pink-300 group-hover:text-pink-200">
+            What's the difference between =, ==, and ===?
+          </summary>
+          <p class="mt-4 text-gray-300 leading-relaxed">
+            In programming: <code class="text-cyan-400 bg-black/50 px-2 py-1 rounded">=</code> assigns a value,
+            <code class="text-cyan-400 bg-black/50 px-2 py-1 rounded">==</code> checks if values are equal (with type coercion),
+            and <code class="text-cyan-400 bg-black/50 px-2 py-1 rounded">===</code> checks if values AND types are equal
+            (strict equality in JavaScript).
+          </p>
+        </details>
+
+        <details class="bg-gradient-to-r from-green-900/40 to-emerald-900/40 rounded-xl p-6 border border-green-500/30 cursor-pointer group">
+          <summary class="text-xl font-bold text-green-300 group-hover:text-green-200">
+            How do I type ≠ (not equal)?
+          </summary>
+          <p class="mt-4 text-gray-300 leading-relaxed">
+            On Windows: Alt + 8800 (using numeric keypad). On Mac: Option + =. Or simply copy it from this page!
+          </p>
+        </details>
+
+        <details class="bg-gradient-to-r from-indigo-900/40 to-purple-900/40 rounded-xl p-6 border border-indigo-500/30 cursor-pointer group">
+          <summary class="text-xl font-bold text-indigo-300 group-hover:text-indigo-200">
+            Is the equal symbol used outside mathematics?
+          </summary>
+          <p class="mt-4 text-gray-300 leading-relaxed">
+            Absolutely! The equal symbol has become a powerful cultural icon representing social equality, LGBTQ+ rights,
+            gender equality, and justice movements. It appears in logos, protests, and advocacy materials worldwide.
+          </p>
+        </details>
+
+        <details class="bg-gradient-to-r from-yellow-900/40 to-orange-900/40 rounded-xl p-6 border border-yellow-500/30 cursor-pointer group">
+          <summary class="text-xl font-bold text-yellow-300 group-hover:text-yellow-200">
+            What is the Unicode value for =?
+          </summary>
+          <p class="mt-4 text-gray-300 leading-relaxed">
+            The standard equal sign is U+003D in Unicode. It's part of the Basic Latin character set and has been
+            standardized across all digital platforms.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fun Facts Section -->
+  <section class="bg-gradient-to-br from-purple-900/30 to-pink-900/30 py-16 border-y border-purple-500/30">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          Absolutely Excessive Fun Facts
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/30">
+            <div class="text-6xl mb-3">📚</div>
+            <p class="text-gray-300 leading-relaxed">
+              The word "equal" comes from the Latin <em class="text-purple-300">aequalis</em>, meaning "uniform" or "level"—
+              which itself derives from <em class="text-purple-300">aequus</em>, meaning "even" or "just."
+            </p>
+          </div>
+
+          <div class="bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-purple-500/30">
+            <div class="text-6xl mb-3">🌍</div>
+            <p class="text-gray-300 leading-relaxed">
+              The equal symbol is one of the few mathematical symbols that looks identical in virtually every
+              culture and writing system worldwide. True universal equality.
+            </p>
+          </div>
+
+          <div class="bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-pink-500/30">
+            <div class="text-6xl mb-3">⚡</div>
+            <p class="text-gray-300 leading-relaxed">
+              Einstein's famous equation E = mc² uses the equal symbol to unite energy, mass, and the speed of light—
+              arguably the most consequential use of "=" in human history.
+            </p>
+          </div>
+
+          <div class="bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-green-500/30">
+            <div class="text-6xl mb-3">🎮</div>
+            <p class="text-gray-300 leading-relaxed">
+              In early computing (1960s-70s), some systems used different symbols for equality. Thank goodness
+              standardization prevailed, or we'd be living in chaos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Resources Section -->
+  <section class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        More Resources & Further Reading
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="https://en.wikipedia.org/wiki/Equals_sign" target="_blank" rel="noopener noreferrer"
+           class="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 hover:from-blue-800/60 hover:to-cyan-800/60 rounded-xl p-6 border border-blue-500/30 hover:border-blue-400/50 transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl">📖</div>
+            <div>
+              <h3 class="text-xl font-bold text-cyan-400 mb-2 group-hover:text-cyan-300">Wikipedia: Equals Sign</h3>
+              <p class="text-sm text-gray-400">Comprehensive encyclopedia article on the equals sign, its history, and usage.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://en.wikipedia.org/wiki/Robert_Recorde" target="_blank" rel="noopener noreferrer"
+           class="bg-gradient-to-br from-purple-900/40 to-pink-900/40 hover:from-purple-800/60 hover:to-pink-800/60 rounded-xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl">👨‍🔬</div>
+            <div>
+              <h3 class="text-xl font-bold text-purple-400 mb-2 group-hover:text-purple-300">Robert Recorde</h3>
+              <p class="text-sm text-gray-400">Learn about the Welsh mathematician who invented the equal symbol in 1557.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://unicode-table.com/en/search/?q=equal" target="_blank" rel="noopener noreferrer"
+           class="bg-gradient-to-br from-cyan-900/40 to-teal-900/40 hover:from-cyan-800/60 hover:to-teal-800/60 rounded-xl p-6 border border-cyan-500/30 hover:border-cyan-400/50 transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl">🔣</div>
+            <div>
+              <h3 class="text-xl font-bold text-cyan-400 mb-2 group-hover:text-cyan-300">Unicode Table</h3>
+              <p class="text-sm text-gray-400">Explore all equal-related Unicode characters and their technical specifications.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.compart.com/en/unicode/category/Sm" target="_blank" rel="noopener noreferrer"
+           class="bg-gradient-to-br from-pink-900/40 to-red-900/40 hover:from-pink-800/60 hover:to-red-800/60 rounded-xl p-6 border border-pink-500/30 hover:border-pink-400/50 transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl">➗</div>
+            <div>
+              <h3 class="text-xl font-bold text-pink-400 mb-2 group-hover:text-pink-300">Math Symbols Unicode</h3>
+              <p class="text-sm text-gray-400">Complete database of mathematical symbols in Unicode, including equality operators.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://mathworld.wolfram.com/Equal.html" target="_blank" rel="noopener noreferrer"
+           class="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 hover:from-indigo-800/60 hover:to-purple-800/60 rounded-xl p-6 border border-indigo-500/30 hover:border-indigo-400/50 transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl">📐</div>
+            <div>
+              <h3 class="text-xl font-bold text-indigo-400 mb-2 group-hover:text-indigo-300">Wolfram MathWorld</h3>
+              <p class="text-sm text-gray-400">Mathematical encyclopedia entry on the equals sign and equality relations.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.fileformat.info/info/unicode/char/003d/index.htm" target="_blank" rel="noopener noreferrer"
+           class="bg-gradient-to-br from-green-900/40 to-emerald-900/40 hover:from-green-800/60 hover:to-emerald-800/60 rounded-xl p-6 border border-green-500/30 hover:border-green-400/50 transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl">💾</div>
+            <div>
+              <h3 class="text-xl font-bold text-green-400 mb-2 group-hover:text-green-300">FileFormat.Info</h3>
+              <p class="text-sm text-gray-400">Detailed technical information about U+003D (equals sign) character encoding.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black/50 backdrop-blur-sm py-12 border-t border-purple-500/30">
+    <div class="container mx-auto px-4 text-center">
+      <div class="text-6xl mb-6">=</div>
+      <p class="text-gray-400 mb-4">
+        &copy; 2025 EqualSymbol.com - The Definitive, Possibly Excessive Guide to the Equal Sign
+      </p>
+      <p class="text-sm text-gray-500 mb-2">
+        Because someone had to do it.
+      </p>
+      <p class="text-xs text-gray-600 mb-6">
+        Created with Claude Code (Claude Sonnet 4.5) by Anthropic
+      </p>
+      <div class="flex justify-center items-center gap-4">
+        <a href="https://github.com/Paillat-dev/equalsymbol.com" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+          </svg>
+          Contribute on GitHub
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
